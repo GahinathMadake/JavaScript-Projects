@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+}
+
+#wrapper{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+#middlediv{
+    width: 600px;
+    height: 400px;
+    border: 2px solid rgb(18, 18, 18);
+    box-shadow: 0 0 10px rgb(195, 47, 47);
+}
