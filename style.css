@@ -1,0 +1,389 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+:root{
+    --blackColor: black;
+    --boxBlackColor: rgb(34, 25, 25);
+    --anotherBlackColor : rgb(15, 16, 16);
+    --shadowBox :  rgb(92, 89, 89);
+    --borderBox: rgb(58, 52, 52);
+    --whiteColor : rgb(239, 227, 227);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins';
+}
+body{
+    width: 100%;
+    background: var(--blackColor);
+}
+#wrapper{
+    width: 100%;
+}
+#wrapper .aboutMe{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box{
+    width: 375px;
+    margin: 150px 0;
+    z-index: 100;
+    position: relative;
+    top: 0;
+    left: 0;
+    border: 2px solid var(--borderBox);
+    border-radius: 5px;
+    padding: 25px 15px;
+    background: var(--boxBlackColor);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.box .myimg{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 10px auto 10px;
+}
+.box p{
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    font-weight: 500;
+    font-size: 30px;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+    color: var(--whiteColor);
+}
+.box p span{
+    font-size: 20px;
+}
+.box .btns{
+    position: relative;
+    width: 100%;
+    padding: 20px 0px;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.box .btns button{
+    width: 45%;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 15px;
+    color: var(--boxBlackColor);
+    background: var(--whiteColor);
+    border: 2px solid white;
+    cursor: pointer;
+}
+.box .btns button:hover{
+    background: var(--boxBlackColor);
+    color: var(--whiteColor);
+}
+
+.box .btns button i{
+    font-size: 16px;
+    padding: 0 0 0 5px ;
+}
+.box::before{
+    content: '';
+    z-index: -1;
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background: linear-gradient(0deg, rgb(226, 77, 77), rgb(255, 89, 0), rgb(231, 4, 4));
+    bottom: 90%;
+    right: 90%;
+    border-radius: 50%;
+    animation: moveCircle1 10s linear infinite;
+}
+.circle{
+    position: relative;
+    z-index: -1;
+}
+.box::after{
+    content: '';
+    position: absolute;
+    z-index: -1;
+    width: 175px;
+    height: 175px;
+    background: linear-gradient(0deg, rgb(42, 109, 216), rgb(48, 58, 171), rgb(4, 46, 231));
+    top: 90%;
+    left: 90%;
+    border-radius: 50%;
+    animation: moveCircle2 10s linear infinite;
+}
+.box::after:nth-child(1){
+    filter: blur(100px);
+}
+
+@keyframes moveCircle1 {
+    0%{
+        transform: translateX(0px) scale(1);
+    }
+    50%,55%{
+        transform: translateX(-25px) scale(0.8);
+    }
+    95%,100%{
+        transform: translateX(0px) scale(1);
+    }    
+}
+@keyframes moveCircle2 {
+    0%{
+        transform: translateX(0px) scale(1) ;
+    }
+    50%,55%{
+        transform: translateX(25px) scale(0.8);
+    }
+    95%,100%{
+        transform: translateX(0px) scale(1);
+    }  
+}
+
+
+.shareFollow{
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 10000; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: -10000;
+    visibility: hidden;
+    /* z-index: 10000; */
+    /* visibility: visible; */
+}
+.overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(63, 61, 61, 0.7);
+    z-index: 10001;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.active{
+    z-index: 10000;
+    visibility: visible;
+}
+
+#modalBox{
+    /* width: 400px; */
+    padding: 20px;
+    border: 1px solid white;
+    border-radius: 10px;
+    background: var(--blackColor);
+    z-index: 10002;
+}
+#modalBox .btnI{
+    width: 100%;
+    padding: 10px 5px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 30px;
+}
+#modalBox .btnI span{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 25px;
+    color: white;
+    border: 2px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-family: 600;
+    
+}
+#modalBox .btnI span:hover{
+    transform: scale(1.03) ;
+    box-shadow: 0 0 20px green;
+}
+#modalBox .btnI span:nth-child(1){
+    color: green;
+}
+#modalBox .btnI span:nth-child(2){
+    color: rgb(247, 17, 113);
+}
+#modalBox .btnI span:nth-child(3),#modalBox .btnI span:nth-child(5){
+    color: rgb(63, 82, 255);
+}
+#modalBox .btnI span:nth-child(4){
+    color: rgb(59, 76, 230);
+}
+
+#modalBox .paraIcon{
+    width: 100%;
+    padding: 5px;
+    color: var(--whiteColor);
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#modalBox .paraIcon i{
+    margin: 5px;
+    font-size: 30px;
+    cursor: pointer;
+}
+#modalBox .heading{
+    width: 100%;
+    padding: 3px 5px;
+    border-bottom: 1px solid white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+}
+#modalBox .heading p{
+    font-size: 20px;
+    color: var(--whiteColor);
+}
+#modalBox .heading span{
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+}
+
+
+
+
+
+.project{
+    width: 100%;
+    background: rgb(15, 15, 15);
+    box-shadow: 0px 0px 10px var(--shadowBox) ;
+    padding: 20px;
+}
+.project .h2{
+    width: 100%;
+    padding: 20px 0px;
+    text-align: center;
+    font-size: 35px;
+    color: rgb(241, 224, 224);
+}
+.project .p{
+    width: 80%;
+    margin: 10px auto;
+    color: rgb(240, 232, 232);
+    font-size: 20px;
+    letter-spacing: 0.75px;
+    word-spacing: 1.1px;
+    text-align: center;
+}
+
+.project .smallProjects{
+    width: 100%;
+    padding: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+.project .smallProjects .projectBox{
+    width: 350px;
+    border-radius: 20px;
+    background:  var(--whiteColor);
+}
+ .projectBox .imgBox{
+    width: 100%;
+    padding: 10px;
+    position: relative;
+    border-radius: 20px 20px 0 20px;
+    background: rgb(45, 45, 222);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 50px;
+}
+.smallProjects .projectBox .imgBox::after,.smallProjects .projectBox .imgBox::before{
+    content: '';
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    background:rgb(45, 45, 222);
+}
+.smallProjects .projectBox .imgBox::after{
+    border-top-right-radius: 20px;
+    background: var(--whiteColor);
+}
+.smallProjects .projectBox .imgBox video{
+    width: 90%;
+    border-radius: 10px;
+}
+.smallProjects .projectBox .content{
+    width:100%;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+
+.projectBox .content h2{
+    width: 100%;
+    text-align: center;
+    font-size: 22px;
+    padding: 10px 0;
+    color: var(--anotherBlackColor);
+}
+.projectBox .content p{
+    width: 100%;
+}
+.projectBox .content a{
+    position: relative;
+    text-decoration: none;
+    color:var(--whiteColor);
+    margin: 10px;
+    padding: 5px 20px;
+    letter-spacing: 0.8px;
+    z-index: 0;
+}
+.projectBox .content a::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--boxBlackColor); 
+    z-index: -1;
+}
+.projectBox .content a::after{
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    bottom: -2px;
+    right: -2px;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    background: linear-gradient(45deg, rgb(225, 62, 25),rgb(235, 51, 51), rgb(42, 42, 217), rgb(13, 13, 252));
+    z-index: -10;
+}
+
+
+
+
