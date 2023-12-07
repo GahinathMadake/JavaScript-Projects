@@ -153,9 +153,29 @@ body{
 @media screen and (max-width: 700px){
     .box{
         margin: 30px 0;
+        width: 300px;
+        padding: 20px 10px;
     }
     .box::before, .box::after{
+        width: 1px;
+        height: 1px;
         visibility: hidden;
+    }
+    .box .myimg{
+        min-width: 100px;
+        min-height: 100px;
+    }
+    .box p{
+        font-size: 20px;
+    }
+    .box p span{
+        font-size: 16px;
+    }
+    .box .btns button{
+        font-size: 14px;
+    }
+    .box .btns button i{
+        display: none;
     }
 }
 
@@ -286,6 +306,12 @@ body{
 
 
 
+
+
+
+
+
+
 .project{
     width: 100%;
     background: rgb(15, 15, 15);
@@ -311,7 +337,7 @@ body{
 
 .project .smallProjects{
     width: 100%;
-    padding: 50px;
+    padding: 50px 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -369,6 +395,7 @@ body{
 }
 .projectBox .content p{
     width: 100%;
+    padding: 0 5px;
 }
 .projectBox .content a{
     position: relative;
@@ -402,6 +429,29 @@ body{
     z-index: -10;
 }
 
-
+@media screen and (max-width: 700px){
+    .project .h2{
+        font-size: 25px;
+        font-weight: 400;
+        padding: 10px 0;
+    }
+    .project .p{
+        width: 100%;
+        font-size: 16px;
+        margin: 0;
+    }
+    .project .smallProjects{
+        padding: 30px 5px;
+    }
+    .project .smallProjects .projectBox{
+        width: 300px;
+    }
+    .projectBox .content h2{
+        font-size: 20px;
+    }
+    .projectBox .content p{
+        font-size: 16px;
+    }
+}
 
 
