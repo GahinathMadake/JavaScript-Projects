@@ -1,4 +1,4 @@
-const link = 50;
+const link = 'https://gahinathmadake.github.io/JavaScript-Projects/';
 
 // function which stops the scrolling of background
 function preventScroll(e){
